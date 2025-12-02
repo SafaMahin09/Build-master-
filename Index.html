@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuildMaster Construction</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+    body { background: #f9f9f9; color: #333; overflow-x: hidden; }
+    header { background: #222; color: white; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; }
+    header h1 { color: #f7b500; font-size: 1.6rem; }
+    nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: 500; }
+    nav a:hover { color: #f7b500; }
+
+    .section { display: none; padding: 60px 20px; text-align: center; }
+    .active { display: block; animation: fadeIn 0.7s ease-in; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .hero { background: linear-gradient(135deg, #f7b500, #ff9800); color: white; padding: 100px 20px; }
+    .hero h2 { font-size: 2.2rem; margin-bottom: 15px; }
+    .hero button { background: white; color: #f7b500; padding: 10px 25px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+    .hero button:hover { background: #222; color: white; }
+
+    .projects, .services, .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1100px; margin: auto; }
+    .card { background: white; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); padding: 20px; transition: 0.3s; }
+    .card:hover { transform: translateY(-5px); }
+
+    .contact form, .login form { display: flex; flex-direction: column; gap: 10px; max-width: 400px; margin: 20px auto; text-align: left; }
+    input, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 100%; }
+    button { padding: 10px; border: none; background: #f7b500; color: white; font-weight: bold; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #ff9800; }
+
+    footer { background: #222; color: white; text-align: center; padding: 15px; margin-top: 50px; }
+    footer p { margin: 5px 0; font-size: 0.9rem; }
+
+    @media (max-width: 768px) {
+      nav { display: flex; flex-wrap: wrap; justify-content: center; }
+      header { flex-direction: column; text-align: center; }
+      .hero h2 { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>BuildMaster</h1>
+  <nav>
+    <a href="#" data-section="home">Home</a>
+    <a href="#" data-section="projects">Projects</a>
+    <a href="#" data-section="services">Services</a>
+    <a href="#" data-section="testimonials">Testimonials</a>
+    <a href="#" data-section="contact">Contact</a>
+    <a href="#" data-section="login">Login</a>
+  </nav>
+</header>
+
+<section id="home" class="section active">
+  <div class="hero">
+    <h2>Building Dreams Into Reality</h2>
+    <p>Trusted contractors for residential, commercial & renovation projects.</p>
+    <button data-section="projects">Explore Our Work</button>
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <h2>Our Projects</h2>
+  <div class="projects">
+    <div class="card"><h3>Modern Villa</h3><p>Residential construction with premium design.</p><p><b>Price:</b> ₹35 Lakhs</p></div>
+    <div class="card"><h3>Office Complex</h3><p>Commercial project with smart workspace.</p><p><b>Price:</b> ₹50 Lakhs</p></div>
+    <div class="card"><h3>Home Renovation</h3><p>Elegant and affordable redesigns.</p><p><b>Price:</b> ₹10–15 Lakhs</p></div>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card"><h3>Basic Package</h3><p>Affordable & quality materials.</p><p><b>₹1200/sqft</b></p></div>
+    <div class="card"><h3>Standard Package</h3><p>Perfect balance of quality & cost.</p><p><b>₹1600/sqft</b></p></div>
+    <div class="card"><h3>Premium Package</h3><p>Top-notch luxury finish.</p><p><b>₹2100/sqft</b></p></div>
+  </div>
+</section>
+
+<section id="testimonials" class="section">
+  <h2>What Our Clients Say</h2>
+  <div class="testimonials">
+    <div class="card"><p>“BuildMaster delivered our dream home perfectly. Highly recommend!”</p><h4>- Rahul</h4></div>
+    <div class="card"><p>“Professional team and transparent pricing. Loved their work!”</p><h4>- Priya</h4></div>
+  </div>
+</section>
+
+<section id="contact" class="section contact">
+  <h2>Contact Us</h2>
+
+  <!-- BACKEND CONNECTED GOOGLE FORM -->
+  <form id="contactForm">
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="tel" id="phone" placeholder="Phone Number" required>
+    <textarea id="message" rows="4" placeholder="Your Message"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <p>📞 9900617687 | 📧 safamahin9@gmail.com</p>
+</section>
+
+<section id="login" class="section login">
+  <h2>Login</h2>
+  <form>
+    <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Password" required>
+    <button>Login</button>
+  </form>
+  <p>Don't have an account? <a href="#">Sign Up</a></p>
+</section>
+
+<footer>
+  <p>© 2025 BuildMaster Construction | All rights reserved</p>
+  <p>Contact: 9900617687 | safamahin9@gmail.com</p>
+</footer>
+
+<script>
+
+// Navigation
+const links = document.querySelectorAll("nav a, .hero button");
+const sections = document.querySelectorAll(".section");
+
+links.forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    const target = link.getAttribute("data-section");
+    if (!target) return;
+    sections.forEach(sec => sec.classList.remove("active"));
+    document.getElementById(target).classList.add("active");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
+
+// GOOGLE FORM BACKEND
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let url =
+    "https://docs.google.com/forms/d/e/1FAIpQLSdmq4Tq5MoIiSjjAP_heXTpXTzEaS14ink6SMC6V6-fnNJfdw/formResponse?" +
+    "entry.1336467281=" + document.getElementById("name").value +
+    "&entry.1902500024=" + document.getElementById("email").value +
+    "&entry.138081375=" + document.getElementById("phone").value +
+    "&entry.1457887449=" + document.getElementById("message").value;
+
+  fetch(url, { method: "POST", mode: "no-cors" });
+
+  alert("Message Sent Successfully! ✔");
+  document.getElementById("contactForm").reset();
+});
+
+</script>
+
+</body>
+      </html>
